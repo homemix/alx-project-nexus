@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 import environ
+from decouple import config
 
 env = environ.Env()
 
@@ -27,7 +28,8 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DJANGO_DEBUG')
+
+DEBUG = config('DJANGO_DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
@@ -40,9 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'drf_yasg',
-    'django_seed',
     'products.apps.ProductsConfig',
     'categories.apps.CategoriesConfig'
 ]
@@ -114,9 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-
-USE_TZ = True
-TIME_ZONE = 'Africa/Nairobi'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
