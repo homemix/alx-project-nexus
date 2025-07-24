@@ -31,5 +31,5 @@ jobs:
             pip install -r requirements.txt
             python manage.py migrate --noinput
             python manage.py collectstatic --noinput
-            sudo systemctl restart gunicorn_ecommerce
+            sudo systemctl restart gunicorn_alx_project_nexus
           EOF
