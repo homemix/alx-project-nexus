@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Product
+from .serializers import ProductSerializer
 
-# Create your views here.
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all().select_related('category')
+    serializer_class = ProductSerializer
+    lookup_field = 'slug'
