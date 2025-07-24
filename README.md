@@ -29,5 +29,10 @@ This repository is dedicated to documenting major learnings from the **ProDev Ba
 - **Collaboration Hub**  
   Encourages teamwork and knowledge-sharing between frontend and backend learners.
 
+## Project API Documentation
+
+* http://nexus.homemixsystems.co.ke/redoc/
+* http://nexus.homemixsystems.co.ke/swagger/
+
 ---
 
