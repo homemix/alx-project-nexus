@@ -34,6 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('users.urls')),
     path('api/', include('categories.urls')),
+    path('api/', include('products.urls')),
 
 
     # Swagger/OpenAPI Docs
